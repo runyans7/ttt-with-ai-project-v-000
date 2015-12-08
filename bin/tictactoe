@@ -2,9 +2,9 @@
 
 require_relative '../config/environment'
 
-puts 'Hello, user!'
-puts 'Would you like to play a 0-, 1-, or 2-player game?'
-puts 'Use number only to select (e.g. 0, 1, 2).'
+puts 'Welcome to Tic-Tac-Toe!'
+puts 'How many players for this game?'
+puts 'Please enter 0, 1, or 2'
 
 input = gets.strip.to_i
 
