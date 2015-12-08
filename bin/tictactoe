@@ -2,7 +2,21 @@
 
 require_relative '../config/environment'
 
-game = Game.new
-board = Board.new
-board.display
-game.play
+puts 'Hello, user!'
+puts 'Would you like to play a 0-, 1-, or 2-player game?'
+puts 'Use number only to select (e.g. 0, 1, 2).'
+
+input = gets.strip.to_i
+
+case input
+  when 0
+    puts "Not Ready yet"
+  when 1
+    puts "not ready yet"
+  when 2
+    puts 'Player 1, what should your token be? (Must be one character.)'
+    player_1_token = gets.strip
+    puts 'Player 2, what should your token be? (Must also be one character.)'
+    player_2_token = gets.strip
+    Game.new(Player::Human.new(player_1_token), Player::Human.new(player_2_token)).play
+end
