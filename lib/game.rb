@@ -37,22 +37,22 @@ class Game
   end
 
   def turn
-    board.display
+    cell = current_player.move(board)
 
-    spot = current_player.move(board)
-
-    if board.valid_move?(spot)
-      board.update(spot, current_player)
+    if board.valid_move?(cell)
+      board.update(cell, current_player)
     else
+      puts "Please enter a valid square"
       turn
     end
 
   end
 
   def play
-
+    board.display
     until won? || draw?
       turn
+      system "clear"
       board.display
     end
 
@@ -61,9 +61,5 @@ class Game
     elsif draw?
       puts "Cats Game!"
     end
-      
-
-
   end
-
 end

@@ -1,34 +1,21 @@
 #!/usr/bin/env ruby
 
-require_relative '../config/environment'
+require "pry"
+
+require_relative '../config/environment.rb'
 
 puts 'Welcome to Tic-Tac-Toe!'
 puts 'How many players for this game?'
 puts 'Use number only to select (e.g. 0, 1, 2).'
 
-input = gets.strip.to_i
+input = gets.chomp.to_i
 
 case input
   when 0
     puts "Not Ready yet"
   when 1
-    puts "Not ready yet"
+    puts "Not Ready yet"
   when 2
-    puts 'Player one, would you like to be X or O?'
-    player_token = gets.strip
-    player_1_token = nil
-    player_2_token = nil
-    assign_tokens
-    puts "Player 1 is #{player_1_token} and player 2 is #{player_2_token}. Good luck"
-    Game.new(Player::Human.new(player_1_token), Player::Human.new(player_2_token)).play
-end
-
-def assign_tokens
-  if player_token == "X"
-    player_1_token = "X"
-    player_2_token = "O"
-  elsif player_token == "O"
-    player_1_token = "O"
-    player_2_token = "X"
-  end
+    puts "Player 1 will be X and Player 2 will be O"
+    Game.new(Player::Human.new("X"), Player::Human.new("O")).play
 end
