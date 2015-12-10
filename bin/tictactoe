@@ -14,7 +14,8 @@ case input
   when 0
     puts "Not Ready yet"
   when 1
-    puts "Not Ready yet"
+    puts "Player 1 will be X and the Computer will be O"
+    Game.new(Player::Human.new("X"), Player::Computer.new("O")).play
   when 2
     puts "Player 1 will be X and Player 2 will be O"
     Game.new(Player::Human.new("X"), Player::Human.new("O")).play

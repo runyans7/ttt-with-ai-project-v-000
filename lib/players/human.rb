@@ -1,3 +1,5 @@
+require_relative '../player.rb'
+
 class Player::Human < Player
 
   def move(position)
