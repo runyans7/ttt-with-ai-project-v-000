@@ -13,6 +13,7 @@ input = gets.chomp.to_i
 case input
   when 0
     puts "Not Ready yet"
+    Game.new(Player::Computer.new("X"), Player::Computer.new("O")).play
   when 1
     puts "Player 1 will be X and the Computer will be O"
     Game.new(Player::Human.new("X"), Player::Computer.new("O")).play
