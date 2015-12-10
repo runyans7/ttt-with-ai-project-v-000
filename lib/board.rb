@@ -48,4 +48,8 @@ class Board
     cells[input.to_i - 1] = player.token
   end
 
+  def available_moves
+    board.cells.select { |cell| cell == " " }
+  end
+
 end
